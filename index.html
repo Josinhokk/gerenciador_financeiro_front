@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  
+</head>
+
+<body>
+  <div class="cabeçalho">
+    <h1>Organizador Financeiro</h1>
+  </div>
+  <div class="conteudo">
+
+    <div class="conteudo-principal">
+
+      <div class="conteudo-ganhos">
+        <h3>Ganhos do mês</h3>
+
+        <div class="ganho-mes">
+          <h4>R$</h4>
+          <h4 id="ganhos-valor">0,0</h4>
+        </div>
+        
+      </div>
+      <div class="conteudo-mes">
+        <h3>Mês atual</h3>
+        <h4 id="mes-atual">Janeiro</h4>
+      </div>
+    </div>
+
+    <div class="conteudo-contratos">
+      <h3>Contratos ativos</h3>
+      <h4 id="contratos-ativos">1</h4>
+    </div>
+    <!-- Controle de mês -->
+    <div class="controle-mes">
+      <label for="mes-select">Selecionar mês</label>
+      <select id="mes-select">
+        <option value="1">Janeiro</option>
+        <option value="2">Fevereiro</option>
+        <option value="3">Março</option>
+        <option value="4">Abril</option>
+        <option value="5">Maio</option>
+        <option value="6">Junho</option>
+        <option value="7">Julho</option>
+        <option value="8">Agosto</option>
+        <option value="9">Setembro</option>
+        <option value="10">Outubro</option>
+        <option value="11">Novembro</option>
+        <option value="12">Dezembro</option>
+      </select>
+    </div>
+
+    <!-- Lista de contratos -->
+    <section class="lista-contratos-section"></section>
+    <div class="lista-contratos">
+      <div class="lista-header">
+        <h3>Contratos ativos</h3>
+        <button id="btn-novo-contrato" class="btn-primary" onclick="abrirMenu()">
+          + Novo contrato
+        </button>
+        
+      </div>
+
+      <ul id="lista-contratos">
+      </ul>
+    </div>
+
+    <section class="lista-contratos-mes-section">
+      <div class="lista-contratos-mes">
+  
+      </div>
+    </section>
+
+    
+  </div>
+
+</div>
+<!-- Drawer (aba lateral) -->
+<div id="drawer" class="drawer">
+  <div class="drawer-content">
+
+    <div class="drawer-header">
+      <h3>Novo contrato</h3>
+      <button type="button" id="btn-fechar-drawer" class="drawer-close" onclick="fecharMenu()">✕</button>
+    </div>
+
+    <form id="form-contrato" class="form-contrato">
+
+      <div class="form-group">
+        <label for="nomeCliente">Nome do cliente</label>
+        <input type="text" id="nomeCliente" name="nomeCliente" required />
+      </div>
+
+      <div class="form-group">
+        <label for="numProcesso">Número do processo (opcional)</label>
+        <input type="text" id="numProcesso" name="numProcesso" />
+      </div>
+
+      <div class="form-group">
+        <label for="valorTotal">Valor total</label>
+        <input type="number" id="valorTotal" name="valorTotal" step="0.01" required />
+      </div>
+
+      <div class="form-group">
+        <label for="numeroParcelas">Número de parcelas</label>
+        <input type="number" id="numeroParcelas" name="numeroParcelas" min="1" required />
+      </div>
+
+      <div class="form-group">
+        <label for="dataInicio">Data inicial</label>
+        <input type="date" id="dataInicio" name="dataInicio" required />
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Salvar</button>
+        <button type="button" id="btn-cancelar-drawer" class="btn-secondary" onclick="fecharMenu()">Cancelar</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+
+</body>
+<script src="script.js"></script>
+</html>

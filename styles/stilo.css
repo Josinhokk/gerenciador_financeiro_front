@@ -1,0 +1,212 @@
+/* ========================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ======================================== */
+
+/* Remove margens e padding padrão de todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   VARIÁVEIS CSS (Cores, fontes, espaçamentos)
+   ======================================== */
+
+:root {
+    /* Cores principais */
+    --cor-primaria: #2563eb;
+    --cor-secundaria: #1e40af;
+    --cor-texto: #1f2937;
+    --cor-texto-claro: #6b7280;
+    --cor-fundo: #f9fafb;
+    --cor-branco: #ffffff;
+    --cor-sucesso: #10b981;
+    --cor-borda: #e5e7eb;
+    
+    /* Espaçamentos */
+    --espacamento-pequeno: 0.5rem;
+    --espacamento-medio: 1rem;
+    --espacamento-grande: 2rem;
+    
+    /* Tamanhos de fonte */
+    --fonte-pequena: 0.875rem;
+    --fonte-normal: 1rem;
+    --fonte-media: 1.25rem;
+    --fonte-grande: 1.5rem;
+    --fonte-extra-grande: 2rem;
+    
+    /* Bordas */
+    --raio-borda: 8px;
+    --raio-borda-grande: 12px;
+    
+    /* Sombras */
+    --sombra-padrao: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   ESTILOS BASE
+   ======================================== */
+
+/* Estilos para o corpo da página */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========================================
+   CABEÇALHO
+   ======================================== */
+
+.cabeçalho {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    padding: var(--espacamento-grande);
+    text-align: center;
+    box-shadow: var(--sombra-media);
+}
+
+.cabeçalho h1 {
+    font-size: var(--fonte-extra-grande);
+    font-weight: 700;
+}
+
+/* ========================================
+   CONTEÚDO PRINCIPAL
+   ======================================== */
+
+.conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacamento-medio);
+    padding: var(--espacamento-grande);
+    flex: 1;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Estilo para os cards de conteúdo (ganhos, mês, contratos) */
+.conteudo-ganhos,
+.conteudo-mes,
+.conteudo-contratos {
+    background-color: var(--cor-branco);
+    padding: var(--espacamento-grande);
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-padrao);
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Efeito hover nos cards */
+.conteudo-ganhos:hover,
+.conteudo-mes:hover,
+.conteudo-contratos:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-media);
+}
+
+.conteudo-ganhos h3,
+.conteudo-mes h3,
+.conteudo-contratos h3 {
+    font-size: var(--fonte-media);
+    color: var(--cor-texto-claro);
+    margin-bottom: var(--espacamento-medio);
+    font-weight: 500;
+}
+
+.conteudo-ganhos h4,
+.conteudo-mes h4,
+.conteudo-contratos h4 {
+    font-size: var(--fonte-grande);
+    color: var(--cor-texto);
+    font-weight: 700;
+}
+
+/* Estilo específico para o valor dos ganhos */
+.ganhos-valor {
+    color: var(--cor-sucesso);
+    font-size: 2rem !important;
+}
+
+/* ========================================
+   RODAPÉ
+   ======================================== */
+
+.rodape {
+    background-color: var(--cor-texto);
+    color: var(--cor-branco);
+    padding: var(--espacamento-medio);
+    text-align: center;
+    margin-top: auto;
+}
+
+/* ========================================
+   RESPONSIVIDADE (Mobile)
+   ======================================== */
+
+/* Quando a tela for menor que 768px */
+@media (max-width: 768px) {
+    .conteudo {
+        flex-direction: column;
+        padding: var(--espacamento-medio);
+    }
+    
+    .conteudo-ganhos,
+    .conteudo-mes,
+    .conteudo-contratos {
+        max-width: 100%;
+    }
+    
+    .cabeçalho h1 {
+        font-size: var(--fonte-grande);
+    }
+}
+
+/* ========================================
+   EXEMPLOS DE UTILIDADES (para você usar quando precisar)
+   ======================================== */
+
+/* Classe para centralizar texto */
+.texto-centralizado {
+    text-align: center;
+}
+
+/* Classe para botão */
+.botao {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    padding: var(--espacamento-pequeno) var(--espacamento-medio);
+    border: none;
+    border-radius: var(--raio-borda);
+    cursor: pointer;
+    font-size: var(--fonte-normal);
+    transition: background-color 0.2s;
+}
+
+.botao:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* Classe para input */
+.input {
+    padding: var(--espacamento-pequeno);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda);
+    font-size: var(--fonte-normal);
+    width: 100%;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+ 
